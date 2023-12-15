@@ -1,0 +1,37 @@
+﻿@model IEnumerable<FlowerModel>
+@{
+    ViewData["Title"] = "List of flowers";
+    int count = Model.Count();
+}
+ 
+<p>
+    <a asp-action="InputForm">Create New</a>
+</p>
+
+<p> @count - Products</p>
+
+
+<div class="container d-flex flex-wrap">
+    @if ( Model != null ) {
+    @foreach (var item in Model)
+        {
+            
+            string pic = item.Name;
+            pic = pic.Replace(" ", "");
+            pic+=".png";
+            <div class="card" style="width: 18rem;">
+                <img src="~/image/@pic" class="card-img-top" alt="..." width="150px" height="145px">
+                <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Description</p>
+                <p class="card-text">@item.Price</p>
+
+                <a href="Flower/Details/@item.Id" class="btn btn-primary">Show Details</a>
+                <a href="Flower/Edit/@item.Id" class="btn btn-primary">Edit</a>
+                <a href="Flower/Delete/@item.Id" class="btn btn-danger">Delete</a>
+
+            </div>
+        </div>
+    }
+    }
+</div>
