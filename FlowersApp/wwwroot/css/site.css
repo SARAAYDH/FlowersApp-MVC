@@ -28,4 +28,7 @@ p {
 h1, h2, h3 {
     color: #FF1493;
 }
+.SearchBar input{   
+    width: 300px;
+}
 

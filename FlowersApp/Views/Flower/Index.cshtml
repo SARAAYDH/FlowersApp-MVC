@@ -4,13 +4,24 @@
     int count = Model.Count();
 }
  
+
+
+<form asp-action="Search">
+
+    <div class="SearchBar">
+        <input name="searchedTerm"  class="form-control" placeholder="Which color are you looking for?" />
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="submit" value="Search" class="btn btn-outline-primary" />
+    </div>
+</form>
+<br>
 <p>
-    <a asp-action="InputForm">Create New</a>
+    <a asp-action="InputForm" class="btn btn-outline-success">Create New</a>
 </p>
 
 <p> @count - Products</p>
-
-
 <div class="container d-flex flex-wrap">
     @if ( Model != null ) {
     @foreach (var item in Model)
@@ -26,9 +37,9 @@
                 <p class="card-text">@item.Description</p>
                 <p class="card-text">@item.Price</p>
 
-                <a href="Flower/Details/@item.Id" class="btn btn-primary">Show Details</a>
-                <a href="Flower/Edit/@item.Id" class="btn btn-primary">Edit</a>
-                <a href="Flower/Delete/@item.Id" class="btn btn-danger">Delete</a>
+                    <a href="Flower/Details/@item.Id" class="btn btn-outline-info">Show Details</a>
+                    <a href="Flower/Edit/@item.Id" class="btn btn-outline-secondary">Edit</a>
+                    <a href="Flower/Delete/@item.Id" class="btn btn-outline-danger">Delete</a>
 
             </div>
         </div>

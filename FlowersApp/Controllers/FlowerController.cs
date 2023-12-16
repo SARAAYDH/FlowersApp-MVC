@@ -15,6 +15,10 @@ namespace FlowersApp.Controllers
             
             _context = context;
         }
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        } 
         public IActionResult Index()
         {
             var list_flowers = _context.Flowers.ToList();
@@ -88,5 +92,11 @@ namespace FlowersApp.Controllers
             }
             return RedirectToAction("Index");
         }
+        public IActionResult Search(string searchedTerm)
+        {
+            var flower= from g in _context.Flowers where g.Name.Contains(searchedTerm) select g;
+            return View("Index",flower);
+        }
+
     }
 }
