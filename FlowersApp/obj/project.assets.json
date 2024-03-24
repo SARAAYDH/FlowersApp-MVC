@@ -11663,11 +11663,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saraa\\source\\repos\\FlowersApp\\FlowersApp\\FlowersApp.csproj",
+      "projectUniqueName": "C:\\CAT\\FlowersApp\\FlowersApp\\FlowersApp.csproj",
       "projectName": "FlowersApp",
-      "projectPath": "C:\\Users\\saraa\\source\\repos\\FlowersApp\\FlowersApp\\FlowersApp.csproj",
+      "projectPath": "C:\\CAT\\FlowersApp\\FlowersApp\\FlowersApp.csproj",
       "packagesPath": "C:\\Users\\saraa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saraa\\source\\repos\\FlowersApp\\FlowersApp\\obj\\",
+      "outputPath": "C:\\CAT\\FlowersApp\\FlowersApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

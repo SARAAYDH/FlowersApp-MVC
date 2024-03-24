@@ -45,14 +45,16 @@ namespace FlowersApp.Controllers
         }
         public IActionResult Details(int Id)
         {
-            FlowerModel flower = _context.Flowers.First(i => i.Id == Id);
+            //error
+            FlowerModel flower = _context.Flowers.FirstOrDefault(i => i.Id == Id);
+            if (flower is null) { throw new Exception("the id could not be found"); }
 
             return View(flower);
         }
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var flower = _context.Flowers.Where(i => i.Id == id).FirstOrDefault();
+            var flower = _context.Flowers.FirstOrDefault(i => i.Id == id);
             return View(flower);
         }
         [HttpPost]
